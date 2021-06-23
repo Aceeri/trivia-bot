@@ -3,8 +3,12 @@ name = "trivia-bot"
 version = "0.1.0"
 edition = "2018"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
 tokio = { version = "1.0", features = ["macros", "rt-multi-thread"] }
-serenity = { default-features = false, features = ["client", "gateway", "model", "rustls_backend", "unstable_discord_api"], version = "0.10.8"}
+
+[dependencies.serenity]
+#version = "0.10.8"
+default-features = false
+features = ["builder", "cache", "client", "collector", "gateway", "http", "utils", "model", "rustls_backend", "unstable_discord_api"]
+git = "https://github.com/HarmoGlace/serenity"
+branch = "clarify-slash-commands"
